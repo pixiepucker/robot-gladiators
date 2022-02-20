@@ -1,4 +1,4 @@
-//fight function now with enemy.name parameter
+
 var fight = function(enemy) {
 
     //repeat and execute as long as enemy still alive
@@ -146,8 +146,19 @@ var randomNumber = function(min, max) {
     return value;
 };
 
+var getPlayerName = function () {
+    var name = "";
+
+    while (name === "" || name === "null") {
+        name = prompt("What is your robot's name?");
+    }
+
+    console.log("Your robot's name is " + name);
+    return name;
+}
+
 var playerInfo = {
-    name: window.prompt("What is your robot's name?"),
+    name: getPlayerName(),
     health: 100,
     attack: 10,
     money: 10,
@@ -191,5 +202,4 @@ var enemyInfo = [
     }
 ];
 
-//start game when page loads pls!
 startGame();
